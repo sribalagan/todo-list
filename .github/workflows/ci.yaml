@@ -8,6 +8,10 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
 
   backend:
@@ -35,6 +39,9 @@ jobs:
       - name: Build backend
         run: npm run build --if-present
 
+      - name: Build Docker image
+        run: docker build -t todo-backend:latest .
+
 
   frontend:
     name: Frontend CI
@@ -60,3 +67,6 @@ jobs:
 
       - name: Build frontend
         run: npm run build
+
+      - name: Build Docker image
+        run: docker build -t todo-frontend:latest .
