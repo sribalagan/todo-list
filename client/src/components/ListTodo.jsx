@@ -9,7 +9,7 @@ export const ListTodo = () => {
     const [todos,setTodos] = useState([]);
 
     const deleteTodo = async(id)=>{
-        const deleteTodo = await fetch(`/api/todos/${id}`,{
+        await fetch(`/api/todos/${id}`,{
             "method" : "DELETE"
         });
         setTodos(todos.filter(todo => todo.todo_id !== id));
