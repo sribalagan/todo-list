@@ -9,7 +9,7 @@ export const ListTodo = () => {
     const [todos,setTodos] = useState([]);
 
     const deleteTodo = async(id)=>{
-        const deleteTodo = await fetch(`http://localhost:5001/todos/${id}`,{
+        const deleteTodo = await fetch(`/api/todos/${id}`,{
             "method" : "DELETE"
         });
         setTodos(todos.filter(todo => todo.todo_id !== id));
@@ -17,7 +17,7 @@ export const ListTodo = () => {
     const getTodo =async()=>{
         try {
             
-           const response = await fetch("http://localhost:5001/todos")
+           const response = await fetch("/api/todos")
            const jsonData = await response.json();
             setTodos(jsonData)
         } catch (err) {

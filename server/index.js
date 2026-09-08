@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // Use the todo routes
-app.use("/", todoRoutes);
+app.use("/api", todoRoutes);
 
 // Start the server
 app.listen(5001, () => {
