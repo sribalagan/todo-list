@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: todo-frontend:2.0
+          image: ghcr.io/sribalagan/todo-frontend:$GITHUB_SHA
           imagePullPolicy: IfNotPresent
 
           ports:

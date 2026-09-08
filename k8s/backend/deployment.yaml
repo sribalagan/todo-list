@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: todo-backend:2.0
+          image: ghcr.io/sribalagan/todo-backend:$GITHUB_SHA
 
           imagePullPolicy: IfNotPresent
 
