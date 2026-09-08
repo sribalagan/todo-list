@@ -9,7 +9,7 @@ const EditTodo = ({ todo }) => {
     e.preventDefault();
     try {
       const body = { description };
-      const response = await fetch(
+         await fetch(
         `/api/todos/${todo.todo_id}`,
         {
           method: "PUT",

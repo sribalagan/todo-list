@@ -9,7 +9,7 @@ const InputTodo = () =>{
        e.preventDefault();
         try {
            const body = { description };
-           const response = await fetch("/api/todos",{
+           await fetch("/api/todos",{
             method : "POST",
             headers:{"Content-type" : "application/json"},
             body:JSON.stringify(body)
